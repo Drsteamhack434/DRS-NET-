@@ -1,0 +1,106 @@
+</head>
+<body>
+
+  <header>
+    <h1>DEEP-DRS</h1>
+  </header>
+
+  <div id="userInfo" style="display: none; padding: 10px; background: #111; color: #fff; text-align: center; border-bottom: 1px solid #e71717;">
+  <span id="userName"></span>
+  <button onclick="cerrarSesion()" style="margin-left: 15px; background: transparent; border: 1px solid red; color: red; border-radius: 8px; padding: 5px 10px; cursor: pointer;">Cerrar sesión</button>
+</div>
+
+<nav id="navMenu">
+  <a onclick="mostrarSeccion('inicio', this)">Inicio</a>
+  <a onclick="mostrarSeccion('acerca', this)">Acerca de</a>
+  <a onclick="mostrarSeccion('contacto', this)">Contacto</a>
+  <a onclick="mostrarSeccion('links', this)">Links de redes</a>
+  <a onclick="mostrarSeccion('dox', this)">Postear Dox</a>
+</nav>
+
+
+  <section id="inicio" class="active">
+    <h2>Inicio</h2>
+    <p>Página web donde estará toda la información corrupta de internet.</p>
+    
+     <h2>Publicaciones</h2>
+  <table border="1" cellpadding="10" cellspacing="0" id="tabla-posts">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Enlace</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Se llenará dinámicamente -->
+    </tbody>
+  </table>
+    
+  </section>
+
+  <section id="acerca">
+    <h2>Acerca de</h2>
+    <p>Aquí incluso tú puedes poner tus propias funas junto a nosotros.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes contactarme a través de mi correo electrónico: drsteam450@gmail.com</p>
+  </section>
+
+  <section id="links">
+    <h2>Links de redes</h2>
+    <p>Próximamente se mostrarán aquí nuestras redes.</p>
+  </section>
+
+<section id="dox" class="seccion">
+  <h3>DRS DOX NET</h3>
+  <form id="postForm" class="formulario-post">
+    <input type="text" id="postTitle" class="titulo-input" placeholder="Título del post" required>
+    <textarea id="postText" class="text-area" placeholder="Contenido del post (dox)" required></textarea>
+
+    <label for="postImage" class="boton-archivo">Subir Imagen</label>
+    <input type="file" id="postImage" accept="image/*" class="input-oculto" />
+
+    <button type="submit" class="boton-publicar">Publicar</button>
+  </form>
+
+  <!-- Aquí agregas el contenedor para mostrar el link generado -->
+  <div id="link-container" style="display:none; margin-top:10px;">
+    <input type="text" id="generated-link" readonly style="width: 80%;">
+    <button id="copy-button">Copiar enlace</button>
+  </div>
+</section>
+
+
+<div id="registroModal" class="modal">
+  <div class="modal-content">
+    <h3>Registro Requerido</h3>
+    <p>Para publicar necesitas un nombre de usuario (nick) y una contraseña.</p>
+    <input type="text" id="nick" placeholder="Ingresa tu nick">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="registrarUsuario()">Registrarse</button>
+    <button onclick="mostrarLogin()">¿Ya tienes cuenta? Iniciar sesión</button>
+  </div>
+</div>
+
+<!-- Modal de inicio de sesión -->
+<div id="loginModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Iniciar Sesión</h3>
+    <input type="text" id="loginNick" placeholder="Tu nick">
+    <input type="password" id="loginPassword" placeholder="Tu contraseña">
+    <button onclick="iniciarSesion()">Entrar</button>
+    <button onclick="mostrarRegistro()">Volver al registro</button>
+  </div>
+</div>
+
+
+  <footer>
+    <p>&copy; 2025 Derechos reservados DRS NET.</p>
+  </footer>
+
+</body>
+</html>
